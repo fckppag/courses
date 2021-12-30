@@ -1,0 +1,18 @@
+{% extends 'main/enter_page.html' %}
+
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+<h1>Войдите, чтобы продолжить</h1> 
+<form method="post">
+	{% csrf_token %}
+	{{ form.title }}
+    {{ form.ID_Pass }}
+	<button a href="{% url 'home' %}">Зарегестрироваться</button>
+	<span>{{ error }}</span>
+</form>
+{% endblock %}
